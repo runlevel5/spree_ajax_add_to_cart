@@ -1,7 +1,7 @@
 module SpreeAjaxAddToCart
   class Engine < Rails::Engine
-    engine_name 'spree_ajax_add_to_cart'
     isolate_namespace Spree
+    engine_name 'spree_ajax_add_to_cart'
 
     config.autoload_paths += %W(#{config.root}/lib)
 
