@@ -25,5 +25,5 @@ end
 desc 'Generates a dummy app for testing'
 task :test_app do
   ENV['LIB_NAME'] = 'spree_ajax_add_to_cart'
-  Rake::Task['common:test_app'].invoke
+  Rake::Task['common:test_app'].invoke("Spree::User")
 end

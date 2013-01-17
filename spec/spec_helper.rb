@@ -4,6 +4,7 @@ ENV['RAILS_ENV'] = 'test'
 require File.expand_path('../dummy/config/environment.rb',  __FILE__)
 
 require 'rspec/rails'
+require 'capybara/rspec'
 require 'ffaker'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
@@ -12,6 +13,7 @@ Dir[File.join(File.dirname(__FILE__), 'support/**/*.rb')].each { |f| require f }
 
 # Requires factories defined in spree_core
 require 'spree/core/testing_support/factories'
+require 'spree/core/testing_support/controller_requests'
 require 'spree/core/url_helpers'
 
 RSpec.configure do |config|
@@ -24,6 +26,11 @@ RSpec.configure do |config|
   # visit spree.admin_path
   # current_path.should eql(spree.products_path)
   config.include Spree::Core::UrlHelpers
+
+  config.include Spree::Core::TestingSupport::ControllerRequests, :type => :controller
+  config.include Devise::TestHelpers, :type => :controller
+  config.include Capybara::DSL, :type => :request
+  config.include Capybara::RSpecMatchers, :type => :request
 
   # == Mock Framework
   #
