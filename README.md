@@ -1,7 +1,12 @@
 Spree AJAX Add To Cart
 ======================
 
+# Due to other commitments, I no longer maintain this gem, please feel free to let me know if you want to take over by creating a repo issue. 
+
 The extension adds an AJAX "Add to cart", when the user adds an item to the cart the system will make an Ajax call to add the item to the cart. Once the item has been added the cart details in the header is updated and an alert box displayed informing the user that the item was added.
+
+
+
 
 Installation
 ------------
